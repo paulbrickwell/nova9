@@ -1,9 +1,28 @@
 @import "./variables";
 
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+
+
 html {
-  background-color: $primary-color
+  background-color: $secondary-color;
+  font-family: "Lato", sans-serif;
 }
 
-a, p {
-  color: $white
+* {
+  margin: 0;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary-color;
+}
+
+::selection {
+  background-color: $splash-color;
+  color: $secondary-color;
 }

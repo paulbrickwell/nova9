@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-view />
+    <div id="app-content">
+      <div class="app-constrained">
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,3 +22,27 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#app-content {
+  flex: 1;
+}
+.app-constrained {
+  max-width: $page-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
